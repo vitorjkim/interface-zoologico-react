@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <Navegacao></Navegacao>
-      <div className="ctn-atracoes">
+      <div className='ctn-atracoes'>
         {componentes}
       </div>
     </>
