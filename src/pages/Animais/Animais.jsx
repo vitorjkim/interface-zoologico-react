@@ -1,14 +1,14 @@
-import './Animais.css'
-import CardAnimal from '../../components/CardAnimal/CardAnimal';
 import Navegacao from '../../components/Navegacao/Navegacao';
+import CardAnimal from '../../components/CardAnimal/CardAnimal';
+import './Animais.css'
 
 function Animais() {
-  return (
-    <>
-        <Navegacao></Navegacao>
-        <CardAnimal></CardAnimal>
-    </>
-  );
+    return(
+        <>
+            <Navegacao />
+            <CardAnimal />
+        </>
+    );
 }
 
-export default Animais;
+export default Animais

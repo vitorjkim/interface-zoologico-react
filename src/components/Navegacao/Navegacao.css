@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
-
-.barra-navegacao{
+.barra-navegacao {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
     align-items: center;
-    
+
+    /* position: absolute;
+    top: 0;
+    width: 100%; */
 
     background-color: #000;
     color: #A7A000;
@@ -16,14 +16,13 @@
 
 .logo-zoo {
     width: 25%;
-
 }
 
-.navbar-opcoes{
+.navbar-opcoes {
     width: 75%;
 
     display: flex;
-    margin-right: 2% ;
+    padding-right: 2%;
 }
 
 .navbar-opcoes > ul {
@@ -31,11 +30,11 @@
     flex-direction: row;
     list-style-type: none;
     justify-content: flex-end;
-    
+
     width: 100%;
 }
 
-li{
+li {
     padding: 0 2%;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }

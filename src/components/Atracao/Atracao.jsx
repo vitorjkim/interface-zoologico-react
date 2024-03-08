@@ -1,4 +1,4 @@
-import imgNotFound from '../../assets/img-not-found.png'
+import imgNotFound from '../../assets/img-not-found.png'; // Importando recurso para o componente
 import './Atracao.css'
 
 function Atracao() {
