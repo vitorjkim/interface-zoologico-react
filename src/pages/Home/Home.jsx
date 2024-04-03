@@ -2,6 +2,7 @@ import './Home.css'
 import Atracao from '../../components/Atracao/Atracao';
 import Welcome from '../../components/Welcome/Welcome';
 import Navegacao from '../../components/Navegacao/Navegacao';
+import ImgCarrossel from '../../components/ImgCarrossel/ImgCarrossel';
 
 function Home() {
     const componentes = [];
@@ -16,6 +17,7 @@ function Home() {
             <div className="ctn-atracoes">
                 {componentes}
             </div>
+            <ImgCarrossel></ImgCarrossel>
         </>
     );
 }
