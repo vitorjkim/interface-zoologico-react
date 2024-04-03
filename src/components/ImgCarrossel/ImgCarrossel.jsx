@@ -24,7 +24,7 @@ function ImgCarrossel() {
                         <h3>{animal.Caption}</h3>
                         <p>{animal.text}</p>
                     </Carousel.Caption>
-                </Carousel.Item>))};
+                </Carousel.Item>))}
             </Carousel>
         </div>
     );
