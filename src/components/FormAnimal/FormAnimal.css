@@ -1,40 +1,32 @@
+form {
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+    margin: 2.5% auto;
+}
+
 input {
     background-color: white;
     color: black;
+    width: 50%;
 }
 
-.input{
-    width: 500px;
-    height: 30px;
-}
-
-.tudo{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.forms{
-    display: flex;
-    flex-direction: column;
-    
-}
-
-label{
-    margin-top: 30px;
-}
-
-.bottao{
-    margin-top: 30px;
+select, button {
+    width: 50%;
     background-color: black !important;
-    color: white!important;
+    color: white !important;
 }
 
-.titulo{
-    margin-top: 40px;
+form button {
+    width: 50%;
+    margin: 1% auto;
 }
 
-select {
-    background-color: black !important;
-    color: white!important;
+label {
+    margin-top: 1%;
+}
+
+h2 {
+    margin-top: 2%!important;
 }
