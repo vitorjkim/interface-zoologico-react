@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CardAnimal from '../../components/CardAnimal/CardAnimal';
 import Navegacao from '../../components/Navegacao/Navegacao';
-import './Animais.css'; // Importe o arquivo CSS aqui
+import './Animais.css'; 
 
 function Animais() {
     const [animais, setAnimais] = useState(null);
