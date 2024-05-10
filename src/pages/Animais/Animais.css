@@ -1,0 +1,9 @@
+.ctn-animais{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: flex;
+    justify-content: space-evenly;
+   
+  
+}
