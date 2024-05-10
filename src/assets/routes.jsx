@@ -4,6 +4,7 @@ import Animais from '../pages/Animais/Animais';
 import Fotos from '../pages/Fotos/Fotos';
 import Home from '../pages/Home/Home';
 import { BrowserRouter as Roteador, Routes, Route } from 'react-router-dom';
+import ListaAnimais from '../components/ListaAnimais/ListaAnimais';
 
 function AppRoutes() {
     return (

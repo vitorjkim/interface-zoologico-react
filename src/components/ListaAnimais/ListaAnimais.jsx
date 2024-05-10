@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import './ListaAnimais.css'
 import Table from 'react-bootstrap/Table';
+import AnimalRequests from '../../fetch/AnimalRequests';
+import { FaTrash } from "react-icons/fa";
+
 
 function ListaAnimais() {
 
@@ -8,48 +11,58 @@ function ListaAnimais() {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/listar-aves');
-        if (!response.ok) {
-          throw new Error('Erro ao buscar servidor');
-        }
-        const listaAnimais = await response.json();
-        setAnimais(listaAnimais);
-      } catch (error) {
-        console.error('Erro ao buscar animais:', error);
-      }
-    };
+      setAnimais(await AnimalRequests.ListarAnimais());
+    }
+
 
     fetchData();
   }, []);
 
+  const deletarAnimal = async (id) => {
+    const confirmar = window.confirm(`Deseja deletar o animal com id ${id}?`)
+    if (confirm) {
+      if (await AnimalRequests.deletarAnimal(id)) {
+        window.alert(`Animal deletado com sucesso`);
+        window.location.reload();
+      } else {
+        window.alert(`Erro ao deletar o animal`);
+      }
+    }
+  }
 
   return (
     <>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Genero</th>
-            <th>Envergadura</th>
-          </tr>
-        </thead>
-        <tbody>
-          {animais.length > 0 ? (
-            animais.map((animal) => (
+      <div className='cnt-tb'>
+        {animais.length > 0 ? (
+          <table className="table">
+            <thead>
               <tr>
-                <td>{animal.nomeanimal}</td>
-                <td>{animal.idadeanimal}</td>
-                <td>{animal.generoanimal}</td>
-                <td>{animal.envergadura}</td>
+                <th style={{ backgroundColor: "#575448", color: 'white' }}>Id</th>
+                <th style={{ backgroundColor: "#575448", color: 'white' }}>Nome</th>
+                <th style={{ backgroundColor: "#575448", color: 'white' }}>Idade</th>
+                <th style={{ backgroundColor: "#575448", color: 'white' }}>Gênero</th>
+                <th style={{ backgroundColor: "#575448", color: 'white' }}>Envergadura</th>
+                <th style={{ backgroundColor: "#575448", color: 'white' }}>Ação</th>
               </tr>
-            ))
-          ) : (
-          <p>Carregando... Verifique se o servidor está funcionando</p>
-          )}
-        </tbody>
-      </Table>
+            </thead>
+            <tbody>
+              {animais.map(animal => (
+                <tr key={animal.idanimal} animal={animal}>
+                  <td style={{ backgroundColor: "#d8ce00" }}>{animal.idanimal}</td>
+                  <td style={{ backgroundColor: "#d8ce00" }}>{animal.nomeanimal}</td>
+                  <td style={{ backgroundColor: "#d8ce00" }}> {animal.idadeanimal}</td>
+                  <td style={{ backgroundColor: "#d8ce00" }}>{animal.generoanimal}</td>
+                  <td style={{ backgroundColor: "#d8ce00" }}>{animal.envergadura}</td>
+                  <td style={{ color: "#FFFFFF", backgroundColor: "#000000" }} onClick={() => deletarAnimal(animal.idanimal)}><FaTrash />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>Carregando...</p>
+        )}
+      </div>
     </>
   );
 }
